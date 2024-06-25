@@ -6,17 +6,48 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Pergunta 1",
+        enunciado: "O Matheus é gay?",
         alternativas: [
-            "Alternativa 1",
-            "Alternativa 2"
+            "sim, ele é",
+            "não, ele é"
         ]
     },
     {
-        enunciado: "Pergunta 2",
+        enunciado: "o Gabriel é manco?",
         alternativas: [
-            "Alternativa 1",
-            "Alternativa 2"
+            "não de pouco",
+            "a primeira alternativa"
+        ]
+    },
+    {
+        enunciado: "Plameiras tem mundial?",
+        alternativas: [
+            "com certeza",
+            "obviamnete"
+        ]
+    },
+    {
+        enunciado: "vai chover hoje?",
+        alternativas: [
+            "Já está chovendo" ,
+            "Segundo minhas pesquisas, sim"
+        ]
+    },
+    {
+        enunciado: "o elto é pau mandado da Maria?",
+        alternativas: [
+            "Sim",
+            "sim,bem cachorrinho"
         ]
     }
 ]; 
+
+let atual = 0;
+let perguntaAtual;
+
+function mostraPergunta() {
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+}
+
+mostraPergunta();
