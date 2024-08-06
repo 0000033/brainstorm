@@ -8,36 +8,63 @@ const perguntas = [
     {
         enunciado: "O Matheus é gay?",
         alternativas: [
-            "sim, ele é",
-            "não, ele é"
+            {
+            
+                texto: "sim, ele é"
+                afirmacao: "afirmacao"
+            },
+            {
+                texto: não, ele é",
+                afrimacao: "afirmacao"
+            }
+            
+
         ]
     },
     {
         enunciado: "o Gabriel é manco?",
         alternativas: [
-            "não de pouco",
-            "a primeira alternativa"
+            {
+                texto:"não de pouco",
+                afirmacao: "afirmacao"
+            }
+            
+            
         ]
     },
     {
-        enunciado: "Plameiras tem mundial?",
+        enunciado: "Palmeiras tem mundial?",
         alternativas: [
-            "com certeza",
-            "obviamnete"
+            {
+                texto:"com certeza",
+                afirmacao:"afirmacao"
+            }
+            
+            
         ]
     },
     {
         enunciado: "vai chover hoje?",
         alternativas: [
-            "Já está chovendo" ,
-            "Segundo minhas pesquisas, sim"
+            {
+                texto:"Já está chovendo" ,
+                afrimacao:"afirmacao"
+            }
+            
+            
+            
         ]
     },
     {
-        enunciado: "o elto é pau mandado da Maria?",
+        enunciado: "o Fernando é estranho?",
         alternativas: [
-            "Sim",
-            "sim,bem cachorrinho"
+            {
+                texto:"Sim",
+                afirmacao:"afirmacao"
+            }
+            
+            
+            
         ]
     }
 ]; 
@@ -54,7 +81,11 @@ function mostraPergunta(){
 function mostraPergunta(){
     for(const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click, function(){
+            atual++;
+            mostraPergunta();
+        })
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
