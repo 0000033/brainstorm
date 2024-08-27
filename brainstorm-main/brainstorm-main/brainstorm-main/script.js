@@ -9,11 +9,12 @@ const perguntas = [
         enunciado: "O Matheus é gay?",
         alternativas: [
             {
-                texto: "sim, ele é"
+            
+                texto: "sim, ele é",
                 afirmacao: "afirmacao"
             },
             {
-                texto: não, ele é",
+                texto: "não, ele é",
                 afrimacao: "afirmacao"
             }
             
@@ -29,7 +30,6 @@ const perguntas = [
             }
             
             
-           
         ]
     },
     {
@@ -39,7 +39,6 @@ const perguntas = [
                 texto:"com certeza",
                 afirmacao:"afirmacao"
             }
-            {}
             
             
         ]
@@ -47,15 +46,25 @@ const perguntas = [
     {
         enunciado: "vai chover hoje?",
         alternativas: [
-            "Já está chovendo" ,
-            "Segundo minhas pesquisas, sim"
+            {
+                texto:"Já está chovendo" ,
+                afrimacao:"afirmacao"
+            }
+            
+            
+            
         ]
     },
     {
         enunciado: "o Fernando é estranho?",
         alternativas: [
-            "Sim",
-            "está na cara que sim"
+            {
+                texto:"Sim",
+                afirmacao:"afirmacao"
+            }
+            
+            
+            
         ]
     }
 ]; 
@@ -72,7 +81,11 @@ function mostraPergunta(){
 function mostraPergunta(){
     for(const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", function(){
+            atual++;
+            mostraPergunta();
+        })
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
